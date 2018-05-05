@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>试卷</title>
+    <script type="text/javascript" src="main/main.js"></script>
+</head>
+<body>
+<div style="margin-left: 50px">
+    <h2>统一建模语言理论测试</h2>
+    <table>
+    <tr>
+        <td>考试科目：统一建模语言</td>
+        <td>时间：100分钟</td>
+        <td>得分：100</td>
+    </tr>
+    <tr>
+        <td>班级：<input type="text" id="class" value=""></td>
+        <td>学号：<input type="text" id="number" value=""></td>
+        <td>姓名：<input type="text" id="name" value=""></td>
+    </tr>
+    </table>
+    <h3>一、填空题(每空5分，共20分)</h3>
+            <td>1.UML的中文全称是：<input type="text" id="language" value=""></td><br />
+            <td>2.对象最突出的特征是：
+                <input type="text" id="answer1" value="">
+                <input type="text" id="answer2">
+                <input type="text" id="answer3">
+            </td>
+    <h3>二、选择题(每题10分，共20分)</h3>
+        <p>1.UML与软件工程的关系是：</p>
+        <form name="form1" action="">
+            <input type="radio" name="UML" value="A">(A)UML就是软件工程
+            <br>
+            <input type="radio" name="UML" value="B" >(B)UML参与到软件工程中软件开发过程的几个阶段
+            <br>
+            <input type="radio" name="UML" value="C">(C)UML与软件工程无关
+            <br>
+            <input type="radio" name="UML" value="D">(D)UML就是软件工程的一部分
+        </form>
+        <p>2.JAVA语言支持：</p>
+        <form name="form2" action="">
+            <input type="radio" name="JAVA" value="A" checked>(A)单继承
+            <br>
+            <input type="radio" name="JAVA" value="B">(B)多继承
+            <br>
+            <input type="radio" name="JAVA" value="C">(C)单继承和多继承都支持
+            <br>
+            <input type="radio" name="JAVA" value="D">(D)单继承和多继承都不支持
+        </form>
+    <h3>三、多择题(每题10分，共20分)</h3>
+        <p>1.用例的粒度分为以下哪三种：</p>
+            <form name="form3" action="">
+                <p><input type="checkbox" name="JAVA" value="A" />(A)概述级</p>
+                <p><input type="checkbox" name="JAVA" value="B" />(B)需求级</p>
+                <p><input type="checkbox" name="JAVA" value="C" />(C)用户目标级</p>
+                <p><input type="checkbox" name="JAVA" value="D" checked="checked">(D)子功能级</p>
+            </form>
+        <p>2.类图由以下哪三部分组成：</p>
+        <form name="form4" action="">
+            <p><input type="checkbox" name="JAVA" value="A" />(A)名称(Name)</p>
+            <p><input type="checkbox" name="JAVA" value="B" />(B)属性(Attribute)</p>
+            <p><input type="checkbox" name="JAVA" value="C" />(C)操作(Operation)</p>
+            <p><input type="checkbox" name="JAVA" value="D" checked="checked">(D)方法(Function)</p>
+        </form>
+    <h3>四、判断题(每题10分，共20分)</h3>
+
+        <p>1.用例图只是用于和客户交流和沟通的，用于确定需求。</p>
+        <form name="form5" action="">
+            <input type="radio" name="if" value="T" checked>√
+            <input type="radio" name="if" value="F" />×
+        </form>
+
+        <p>2.在状态图中，终止状态在一个状态图中允许有任意多个。</p>
+        <form name="form6" action="">
+            <input type="radio" name="if" value="T" checked>√
+            <input type="radio" name="if" value="F">×
+        </form>
+    <h3>五、简答题(每题20分，共20分)</h3>
+    <td>1.简述什么是模型以及模型的表现形式？</td><br />
+    <input type="text" value='' id='jianda' style="width:700px;height: 200px" />
+    <br /><br /><br />
+    <input type="submit" value="计算分数" onclick="fn()"/><br /><be />
+</div>
+<script>
+    function fn(){
+
+        var rule1=['B'];
+        var rule2=['A'];
+        var rule3=['A','B','D'];
+        var rule4=['A','B','C'];
+        var rule5=['F'];
+        var rule6=['T'];
+        var rule=[rule1,rule2,rule3,rule4,rule5,rule6];
+        var box1=document.form1.getElementsByTagName('input');
+        var box2=document.form2.getElementsByTagName('input');
+        var box3=document.form3.getElementsByTagName('input');
+        var box4=document.form4.getElementsByTagName('input');
+        var box5=document.form5.getElementsByTagName('input');
+        var box6=document.form6.getElementsByTagName('input');
+        var box=[box1,box2,box3,box4,box5,box6];
+        var blank=['封装性','继承性','多态性'];
+        var blank1 = document.getElementById('language').value;
+        var blank2=document.getElementById('answer1').value;
+        var blank3=document.getElementById('answer2').value;
+        var blank4=document.getElementById('answer3').value;
+        var name=document.getElementById('name').value;
+        var classroom=document.getElementById('class').value;
+        var number=document.getElementById('number').value;
+        var check=[];
+        var score=0;
+
+        /**
+         * 填空题(刚开始取不出来文本框内的值，因为这段取值代码应该写在点击事件里，不应该写在点击事件外面)
+         */
+
+        if(blank1=='统一建模语言'){
+            score+=5;
+            //alert('1');
+        }
+        if(blank.indexOf(blank2)!=-1){
+            score+=5;
+            //alert('2');
+        }
+        if(blank.indexOf(blank3)!=-1){
+            score+=5;
+            //alert('3');
+        }
+        if(blank.indexOf(blank4)!=-1){
+            score+=5;
+            //alert('4');
+        }
+
+        /**
+         * 单选题
+         */
+        for(var m=0;m<2;m++) {
+            for (var i = 0; i < box[m].length; i++) {
+                if (box[m][i].checked) {
+                    check.push(box[m][i].value);
+                }
+            }
+            for (var j = 0; j < check.length; j++) {
+                if (rule[m].indexOf(check[j]) != -1) {
+                    score+=10;
+                }
+            }
+            check=[];
+        }
+
+        /**
+         * 多选题
+         */
+        for(var m=2;m<4;m++) {
+            check=[];
+            let num=0;
+            for (var i = 0; i < box[m].length; i++) {
+                if (box[m][i].checked) {
+                    check.push(box[m][i].value);
+                }
+            }
+            for (var j = 0; j < check.length; j++) {
+                if (rule[m].indexOf(check[j]) != -1) {
+                    num++;
+                }else{
+                    num=0;
+                    break;
+                }
+            }
+            score+=Math.floor(10/rule[m].length*num);
+        }
+
+        /**
+         * 判断题
+         */
+
+        for(var m=4;m<6;m++) {
+            for (var i = 0; i < box[m].length; i++) {
+                if (box[m][i].checked) {
+                    check.push(box[m][i].value);
+                }
+            }
+            for (var j = 0; j < check.length; j++) {
+                if (rule[m].indexOf(check[j]) != -1) {
+                    score+=10;
+                }
+            }
+            check=[];
+        }
+
+        /**
+         * 简答题
+         */
+
+        var answer='模型是对现实世界的简化和抽象，模型是对研究的系统、' +
+            '过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；' +
+            '或者是一种数学表达式。';
+        var jianda=document.getElementById('jianda').value;
+        if(jianda.indexOf('对现实世界的简化和抽象')!=-1)score+=4;
+        if(jianda.indexOf('对研究的系统、过程、事物或概念')!=-1)score+=4;
+        if(jianda.indexOf('物理实体')!=-1)score+=4;
+        if(jianda.indexOf('某种图形')!=-1) score+=4;
+        if(jianda.indexOf('数学表达式')!=-1) score+=4;
+
+        alert('班级:'+classroom+'；学号:'+number+'；姓名:'+name+'，此次考试取得'+score+'分');
+    }
+</script>
+</body>
+</html>
